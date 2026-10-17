@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bgy403k20t78i"
+path.etc2="res://.godot/imported/PineTree_1.png-ca6c5eba758c33b873f99a2deb2f7f01.etc2.ctex"
+metadata={
+"imported_formats": ["etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "625ca4cd62cc1ba1494964cbab06ee70"
+}
+
+[deps]
+
+source_file="res://Models/PineTree_1.png"
+dest_files=["res://.godot/imported/PineTree_1.png-ca6c5eba758c33b873f99a2deb2f7f01.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
