@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bt67ehanrpng1"]
+
+[ext_resource type="Script" uid="uid://bpoymdrfqsb1b" path="res://Scripts/Fish.gd" id="1_j2ykt"]
+[ext_resource type="PackedScene" uid="uid://bbsth5vy3c1lk" path="res://Models/Fish.glb" id="2_8ijwk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g7b7a"]
+radius = 0.3100586
+height = 1.2219238
+
+[node name="Area3D" type="Area3D" unique_id=1095306859]
+script = ExtResource("1_j2ykt")
+
+[node name="Fish" parent="." unique_id=1591756834 instance=ExtResource("2_8ijwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28125393, 0, 0.6210613)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1799359841]
+transform = Transform3D(1, 0, 0, 0, -0.03545579, -0.99937123, 0, 0.99937123, -0.03545579, 0.30192983, 0.6094654, 0.43856683)
+shape = SubResource("CapsuleShape3D_g7b7a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

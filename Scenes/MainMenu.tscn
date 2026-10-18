@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://b3wb6lcd6pj3g"]
+
+[ext_resource type="Script" uid="uid://866tvcnr6yym" path="res://Scripts/MainMenu.gd" id="1_loo7a"]
+[ext_resource type="Texture2D" uid="uid://bq52tayh58iwp" path="res://Sprites & Textures/STCLogo.png" id="2_if7li"]
+[ext_resource type="Texture2D" uid="uid://dwaog403ch7xf" path="res://Sprites & Textures/START.png" id="3_rrcx7"]
+[ext_resource type="Script" uid="uid://c8vym14ldv1me" path="res://Scripts/PlayButton.gd" id="4_fh7cp"]
+[ext_resource type="PackedScene" uid="uid://cs67apjnr3bbl" path="res://Models/Igloo.glb" id="5_8e205"]
+[ext_resource type="PackedScene" uid="uid://dgqn6gpf8ssst" path="res://Scenes/PineTree.tscn" id="6_7467j"]
+[ext_resource type="Texture2D" uid="uid://choa1vh7c8oph" path="res://Sprites & Textures/Tux_1.png" id="7_2x1g0"]
+[ext_resource type="AudioStream" uid="uid://vuw7lfmwp6ff" path="res://Other/SuperTuxKart OST (1.4) 0zone0ne - Cocoa River.ogg" id="8_riqfo"]
+[ext_resource type="PackedScene" uid="uid://bmmvsd6h4tsyf" path="res://Scenes/Tux.scn" id="9_yxkem"]
+[ext_resource type="Texture2D" uid="uid://cit3vp55n7ovk" path="res://Sprites & Textures/Igloo_0.png" id="10_7v4os"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gyc6d"]
+sky_top_color = Color(0, 0.61960787, 0.85490197, 1)
+sky_horizon_color = Color(0.94509804, 0.99215686, 1, 1)
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Sky" id="Sky_g7b7a"]
+sky_material = SubResource("ProceduralSkyMaterial_gyc6d")
+
+[sub_resource type="Environment" id="Environment_g7b7a"]
+background_mode = 2
+sky = SubResource("Sky_g7b7a")
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g7b7a"]
+albedo_texture = ExtResource("7_2x1g0")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g7b7a"]
+top_radius = 2.6875
+bottom_radius = 2.6875
+height = 0.32543945
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyc6d"]
+albedo_texture = ExtResource("10_7v4os")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cqjrg"]
+points = PackedVector3Array(0.51150393, 0.22122857, 2.7301588, -0.51150393, -0.20535871, -2.7301588, -0.853041, -0.20535871, -2.644641, -0.853041, 0.22122857, -2.644641, 2.644641, 0.22122857, -0.853041, 2.2181203, -0.20535871, 1.706082, -2.559123, -0.20535871, 1.1090602, -2.7301588, 0.22122857, -0.51150393, 2.2181203, -0.20535871, -1.706082, -0.51150393, -0.20535871, 2.7301588, -1.706082, 0.22122857, 2.2181203, 1.1090602, 0.22122857, -2.559123, -2.3886218, -0.20535871, -1.4500628, 2.3886218, 0.22122857, 1.4500628, 2.7301588, -0.20535871, 0.51150393, -1.706082, 0.22122857, -2.2181203, 1.2795615, -0.20535871, 2.4741397, 1.1090602, -0.20535871, -2.559123, -2.559123, 0.22122857, 1.1090602, -1.706082, -0.20535871, 2.2181203, 1.706082, 0.22122857, 2.2181203, -2.7301588, -0.20535871, 0.51150393, 1.706082, 0.22122857, -2.2181203, -0.853041, 0.22122857, 2.644641, 2.7301588, 0.22122857, 0.51150393, 2.7301588, -0.20535871, -0.51150393, 0.51150393, 0.22122857, -2.7301588, -2.3886218, 0.22122857, -1.4500628, -1.706082, -0.20535871, -2.2181203, -2.7301588, -0.20535871, -0.51150393, -2.2181203, -0.20535871, 1.706082, 0.51150393, -0.20535871, 2.7301588)
+
+[node name="Node3D" type="Node3D" unique_id=1615995938]
+script = ExtResource("1_loo7a")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1936048083]
+environment = SubResource("Environment_g7b7a")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1670353059]
+transform = Transform3D(0.7071068, 0.5, -0.5, 0, 0.7071068, 0.7071068, 0.7071068, -0.5, 0.5, 0, 5.6815658, 0)
+light_color = Color(0.9691369, 0.9691369, 0.9691368, 1)
+shadow_enabled = true
+shadow_opacity = 0.7
+shadow_blur = 10.0
+
+[node name="Control" type="Control" parent="." unique_id=149012827]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=858904305]
+position = Vector2(600, 150)
+texture = ExtResource("2_if7li")
+
+[node name="TextureButton" type="TextureButton" parent="Control" unique_id=836699341]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 414.00003
+offset_right = 630.0
+offset_bottom = 614.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("3_rrcx7")
+script = ExtResource("4_fh7cp")
+
+[node name="Igloo" parent="." unique_id=1861254912 instance=ExtResource("5_8e205")]
+transform = Transform3D(0.98047924, 0, 0.4986587, 0, 1.1, 0, -0.4986587, 0, 0.98047924, 0.68145007, -0.29912406, 0.93394136)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2003945972]
+transform = Transform3D(0.6793872, 0, -0.73378, 0, 1, 0, 0.73378, 0, 0.6793872, -0.8659373, 0.8265312, 1.8256807)
+
+[node name="PineTrees" type="Node" parent="." unique_id=1595396680]
+
+[node name="PineTree" parent="PineTrees" unique_id=455337764 instance=ExtResource("6_7467j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0969466, 0.32966876, -0.015999556)
+
+[node name="PineTree2" parent="PineTrees" unique_id=1264955987 instance=ExtResource("6_7467j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.3312049, 0.32966876, -0.8095336)
+
+[node name="PineTree3" parent="PineTrees" unique_id=919320912 instance=ExtResource("6_7467j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.6748462, 0.32966876, 1.8070627)
+
+[node name="PineTree4" parent="PineTrees" unique_id=1044789582 instance=ExtResource("6_7467j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.363761, 0.7536117, -0.14718759)
+
+[node name="PineTree5" parent="PineTrees" unique_id=199705909 instance=ExtResource("6_7467j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.3821846, 0.32966876, 1.4960952)
+
+[node name="PineTree6" parent="PineTrees" unique_id=834031362 instance=ExtResource("6_7467j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.89097464, 0.32966876, -0.3549738)
+
+[node name="PineTree7" parent="PineTrees" unique_id=835390689 instance=ExtResource("6_7467j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5856887, 0.7572466, -1.5262319)
+
+[node name="PineTree8" parent="PineTrees" unique_id=1689003675 instance=ExtResource("6_7467j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.8646747, 0.92608345, -1.3443644)
+
+[node name="PineTree9" parent="PineTrees" unique_id=1371167543 instance=ExtResource("6_7467j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.9387531, 0.8641726, 0.8679439)
+
+[node name="Elevations" type="Node" parent="." unique_id=1932932327]
+
+[node name="Elevation1" type="CSGSphere3D" parent="Elevations" unique_id=1393613092]
+transform = Transform3D(1, 0, 0, 0, 0.6099868, 0, 0, 0, 1, 1.9430008, 0.38445354, -1.3229872)
+material_override = SubResource("StandardMaterial3D_g7b7a")
+radius = 1.0094353
+radial_segments = 20
+
+[node name="Elevation2" type="CSGSphere3D" parent="Elevations" unique_id=572410308]
+transform = Transform3D(1, 0, 0, 0, 0.6099868, 0, 0, 0, 1, 0.7456527, 0.38445354, -1.9713602)
+material_override = SubResource("StandardMaterial3D_g7b7a")
+radius = 1.0094353
+radial_segments = 20
+
+[node name="Elevation3" type="CSGSphere3D" parent="Elevations" unique_id=1546078624]
+transform = Transform3D(1, 0, 0, 0, 0.6099868, 0, 0, 0, 1, -0.74116504, 0.38445354, -1.9230263)
+material_override = SubResource("StandardMaterial3D_g7b7a")
+radius = 1.0094353
+radial_segments = 20
+
+[node name="Elevation4" type="CSGSphere3D" parent="Elevations" unique_id=393980058]
+transform = Transform3D(1, 0, 0, 0, 0.6099868, 0, 0, 0, 1, -1.858169, 0.38445354, -1.325562)
+material_override = SubResource("StandardMaterial3D_g7b7a")
+radius = 1.0094353
+radial_segments = 20
+
+[node name="Elevation5" type="CSGSphere3D" parent="Elevations" unique_id=612404136]
+transform = Transform3D(1, 0, 0, 0, 0.6099868, 0, 0, 0, 1, 2.79316, 0.38445354, -0.45088243)
+material_override = SubResource("StandardMaterial3D_g7b7a")
+radius = 1.0094353
+radial_segments = 20
+
+[node name="Elevation6" type="CSGSphere3D" parent="Elevations" unique_id=440089985]
+transform = Transform3D(1, 0, 0, 0, 0.6099868, 0, 0, 0, 1, 3.1099086, 0.38445354, 0.911577)
+material_override = SubResource("StandardMaterial3D_g7b7a")
+radius = 1.0094353
+radial_segments = 20
+
+[node name="Elevation7" type="CSGSphere3D" parent="Elevations" unique_id=1076113188]
+transform = Transform3D(1, 0, 0, 0, 0.6099868, 0, 0, 0, 1, 2.7126904, 0.38445354, 1.9918327)
+material_override = SubResource("StandardMaterial3D_g7b7a")
+radius = 1.0094353
+radial_segments = 20
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1624646732]
+stream = ExtResource("8_riqfo")
+autoplay = true
+parameters/looping = true
+
+[node name="Tux" parent="." unique_id=151174507 instance=ExtResource("9_yxkem")]
+transform = Transform3D(0.27409065, 0, 0.12196025, 0, 0.29999998, 0, -0.12196025, 0, 0.27409065, -0.19309878, 0.1899029, 1.2358541)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1243139974]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=699624176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029903889, 0.19590694, 0.32289302)
+mesh = SubResource("CylinderMesh_g7b7a")
+surface_material_override/0 = SubResource("StandardMaterial3D_gyc6d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=802616861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029903889, 0.19590694, 0.32289302)
+shape = SubResource("ConvexPolygonShape3D_cqjrg")
+
+[connection signal="pressed" from="Control/TextureButton" to="Control/TextureButton" method="_on_pressed"]

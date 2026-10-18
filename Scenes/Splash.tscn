@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cldkwtiuefvm"]
+
+[ext_resource type="Script" uid="uid://bql7t4o8jv0ny" path="res://Scripts/splash.gd" id="1_y83ar"]
+[ext_resource type="Texture2D" uid="uid://yraumd6yf4o0" path="res://Sprites & Textures/LibreStudiosSplash.png" id="2_y83ar"]
+
+[node name="Control" type="Control" unique_id=20429258]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_y83ar")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=679162815]
+position = Vector2(581, 321)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_y83ar")
