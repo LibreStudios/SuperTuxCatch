@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bsa3q34yxs8ia"
+path="res://.godot/imported/SuperTuxKart OST (1.5) 0zone0ne - Snow.ogg-e0610c9876c37575191adc0d6def8f8c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Other/SuperTuxKart OST (1.5) 0zone0ne - Snow.ogg"
+dest_files=["res://.godot/imported/SuperTuxKart OST (1.5) 0zone0ne - Snow.ogg-e0610c9876c37575191adc0d6def8f8c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

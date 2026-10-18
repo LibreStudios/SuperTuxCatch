@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://vuw7lfmwp6ff"
+path="res://.godot/imported/SuperTuxKart OST (1.4) 0zone0ne - Cocoa River.ogg-89706b9d6cbabab25cb3f0ab95c4fe15.oggvorbisstr"
+
+[deps]
+
+source_file="res://Other/SuperTuxKart OST (1.4) 0zone0ne - Cocoa River.ogg"
+dest_files=["res://.godot/imported/SuperTuxKart OST (1.4) 0zone0ne - Cocoa River.ogg-89706b9d6cbabab25cb3f0ab95c4fe15.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
