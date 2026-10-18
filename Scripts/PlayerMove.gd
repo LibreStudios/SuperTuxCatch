@@ -3,7 +3,7 @@
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
-# at any later version.
+# any later version.
 
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -14,7 +14,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 extends CharacterBody3D
-
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -36,9 +35,14 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		# Tux'un döneceği hedef açı (Kameranın açısıyla birleşti):
+		
 		var target_rotation = atan2(direction.x, direction.z) + (PI / 2)
 		$Tux.rotation.y = lerp_angle($Tux.rotation.y, target_rotation, 0.15)
+		
+		var target_pivot_y = atan2(-direction.x, -direction.z)
+		$CameraPivot.rotation.y = lerp_angle($CameraPivot.rotation.y, target_pivot_y, 0.02)
+
+
 		if animation_state != "Run":
 			animation_state = "Run"
 			$Tux/AnimationTree.get("parameters/playback").travel("Run")
@@ -49,7 +53,9 @@ func _physics_process(delta: float) -> void:
 		if animation_state != "Idle":
 			animation_state = "Idle"
 			$Tux/AnimationTree.get("parameters/playback").travel("Idle")
+			
 	move_and_slide()
+
 func _unhandled_input(event):
 	if event is InputEventScreenDrag:
 		$CameraPivot.rotate_y(-event.relative.x * sensitivity)
